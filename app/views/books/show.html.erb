@@ -1,1 +1,24 @@
-show
+<div class="container">
+  <h1>Book Show</h1>
+  <div class="row pl-3">
+    <div class="d-flex flex-column">
+      <div class="title">
+        <p><span class="font-weight-bold">title</span>:
+        <%= @book.title%>
+        </p>
+      </div>
+      <div class="body">
+        <p><span class="font-weight-bold">body</span>:
+        <%= @book.body %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="link_btn">
+      <%= link_to "edit", edit_book_path(@book) %>
+      |
+      <%= link_to "back", books_path %>
+    </div>
+  </div>
+</div>

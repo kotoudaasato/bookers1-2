@@ -1,0 +1,25 @@
+<div class="book_form">
+  <%=form_with model:@book ,local:true do |f| %>
+    <% if book.errors.any? %>
+      <p><%= pluralize(book.errors.count, "error")%></p>
+      <% book.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <div class="title_form p-3">
+      <p class="pt-2 mb-0">
+        <%= f.label :title %>
+      </p>
+      <%= f.text_field :title %>
+    </div>
+    <div class="bodt_form p-3">
+      <p class="pt-2 mb-0">
+        <%= f.label :body %>
+      </p>
+      <%= f.text_area :body %>
+    </div>
+    <div class="submit_btn pl-3">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

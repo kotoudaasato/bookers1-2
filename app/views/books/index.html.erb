@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Books</h1>
+  <%= flash[:notice] %>
   <div class="row">
     <table class="table">
       <thead>
@@ -36,18 +37,6 @@
   </div>
   <h1>New Book</h1>
   <div class="row">
-    <div class="book_form">
-      <%=form_with model:@book ,local:true do |f| %>
-        <div class="title_form p-3">
-          <%= f.text_field :title %>
-        </div>
-        <div class="bodt_form p-3">
-          <%= f.text_area :body %>
-        </div>
-        <div class="submit_btn pl-3">
-          <%= f.submit "Create Book"%>
-        </div>
-      <% end %>
-    </div>
+    <%= render "form", book:@book %>
   </div>
 </div>
